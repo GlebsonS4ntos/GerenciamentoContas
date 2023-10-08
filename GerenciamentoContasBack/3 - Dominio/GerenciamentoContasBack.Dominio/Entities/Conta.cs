@@ -12,7 +12,7 @@ namespace GerenciamentoContasBack.Dominio.Entities
         public double ValorTotal { get; set; }
         public int QuantidadeParcelas { get; set; }
         public bool IsMesAtual { get; set; }
-        public ICollection<TipoConta> TiposContas { get; set; }
-        public ICollection<PagamentoMensal> PagementosMensais { get; set; }
+        public virtual ICollection<TipoConta> TiposContas { get; set; }
+        public virtual ICollection<PagamentoMensal> PagementosMensais { get; set; }
     }
 }

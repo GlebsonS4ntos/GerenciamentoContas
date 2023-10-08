@@ -9,6 +9,6 @@ namespace GerenciamentoContasBack.Dominio.Entities
     public class Tipo : BaseEntity
     {
         public string Nome { get; set; } 
-        public ICollection<TipoConta> TiposContas { get; set; }
+        public virtual ICollection<TipoConta> TiposContas { get; set; }
     }
 }

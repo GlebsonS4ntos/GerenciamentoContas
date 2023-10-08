@@ -11,7 +11,7 @@ namespace GerenciamentoContasBack.Dominio.Entities
     {
         public int ContaId { get; set; }
         [JsonIgnore]
-        public Conta Conta { get; set; }
+        public virtual Conta Conta { get; set; }
         public int Parcela { get; set; }
         public DateTime DataParcela { get; set; }
     }

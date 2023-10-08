@@ -11,9 +11,9 @@ namespace GerenciamentoContasBack.Dominio.Entities
     {
         public int TipoId { get; set; }
         [JsonIgnore]
-        public Tipo Tipo { get; set; }
+        public virtual Tipo Tipo { get; set; }
         public int ContaId { get; set; }
         [JsonIgnore]
-        public Conta Conta { get; set; }
+        public virtual Conta Conta { get; set; }
     }
 }
