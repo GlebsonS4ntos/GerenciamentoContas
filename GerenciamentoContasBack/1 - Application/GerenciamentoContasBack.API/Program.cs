@@ -10,8 +10,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<ContasContext>(
-    db => db.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("LocalString")));
+builder.Services.AddDbContext<ContasContext>(db => {
+    db.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("LocalString"));
+});
 
 var app = builder.Build();
 
