@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace GerenciamentoContasBack.Dominio.Entities
 {
-    public class PagamentoMensal : BaseEntity
+    public class TipoConta : BaseEntity
     {
+        public int TipoId { get; set; }
+        [JsonIgnore]
+        public Tipo Tipo { get; set; }
         public int ContaId { get; set; }
         [JsonIgnore]
         public Conta Conta { get; set; }
-        public int Parcela { get; set; }
-        public DateTime DataParcela { get; set; }
     }
 }

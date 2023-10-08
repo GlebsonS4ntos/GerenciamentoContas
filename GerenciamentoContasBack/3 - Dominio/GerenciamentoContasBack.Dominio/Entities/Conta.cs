@@ -11,8 +11,8 @@ namespace GerenciamentoContasBack.Dominio.Entities
         public string Descricao { get; set; }
         public double ValorTotal { get; set; }
         public int QuantidadeParcelas { get; set; }
-
-        public ICollection<Tipo> Tipos { get; set; }
         public bool IsMesAtual { get; set; }
+        public ICollection<TipoConta> TiposContas { get; set; }
+        public ICollection<PagamentoMensal> PagementosMensais { get; set; }
     }
 }
