@@ -1,3 +1,4 @@
+using GerenciamentoContasBack.Infra;
 using GerenciamentoContasBack.Infra.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,6 +10,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddRepositories();
 
 builder.Services.AddDbContext<ContasContext>(db => {
     db.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("LocalString"));

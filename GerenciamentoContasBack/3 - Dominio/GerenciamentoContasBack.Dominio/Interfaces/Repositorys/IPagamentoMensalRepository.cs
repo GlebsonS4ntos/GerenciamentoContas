@@ -10,7 +10,9 @@ namespace GerenciamentoContasBack.Dominio.Interfaces.Repositorys
     public interface IPagamentoMensalRepository
     {
         Task<List<PagamentoMensal>> GetAll();
-        Task<PagamentoMensal> GetPagamentoMensalById(int pagamentoMensalId);
+        Task<PagamentoMensal> GetPagamentoMensalById(int id);
         Task AddPagamentoMensal(PagamentoMensal pagamentoMensal);
+        Task Delete(int id);
+        Task Update(PagamentoMensal pagamentoMensal, int pagamentoMensalId);
     }
 }

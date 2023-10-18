@@ -10,5 +10,19 @@ namespace GerenciamentoContasBack.Dominio.Entities
     {
         public string Nome { get; set; } 
         public virtual ICollection<TipoConta> TiposContas { get; set; }
+
+        public Tipo() { }
+
+        public Tipo(string nome, ICollection<TipoConta> tiposContas)
+        {
+            Nome = nome;
+            TiposContas = tiposContas;
+        }
+
+        public void UpdateTipo(Tipo tipo)
+        {
+            Nome = tipo.Nome;
+            TiposContas = tipo.TiposContas;
+        }
     }
 }

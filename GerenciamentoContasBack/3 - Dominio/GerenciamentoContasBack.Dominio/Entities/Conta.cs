@@ -14,5 +14,27 @@ namespace GerenciamentoContasBack.Dominio.Entities
         public bool IsMesAtual { get; set; }
         public virtual ICollection<TipoConta> TiposContas { get; set; }
         public virtual ICollection<PagamentoMensal> PagementosMensais { get; set; }
+
+        public Conta() { }
+
+        public Conta(string descricao, double valorTotal, int quantidadeParcelas, bool isMesAtual, ICollection<TipoConta> tiposContas, ICollection<PagamentoMensal> pagementosMensais)
+        {
+            Descricao = descricao;
+            ValorTotal = valorTotal;
+            QuantidadeParcelas = quantidadeParcelas;
+            IsMesAtual = isMesAtual;
+            TiposContas = tiposContas;
+            PagementosMensais = pagementosMensais;
+        }
+
+        public void UpdateConta(Conta conta)
+        {
+            Descricao = conta.Descricao;
+            ValorTotal = conta.ValorTotal;
+            QuantidadeParcelas = conta.QuantidadeParcelas;
+            IsMesAtual = conta.IsMesAtual;
+            TiposContas = conta.TiposContas;
+            PagementosMensais = conta.PagementosMensais;
+        }
     }
 }
