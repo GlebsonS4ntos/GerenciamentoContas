@@ -1,3 +1,4 @@
+using GerenciamentoConstasBack.Service;
 using GerenciamentoContasBack.Infra;
 using GerenciamentoContasBack.Infra.Data;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddRepositories();
+builder.Services.AddService();
 
 builder.Services.AddDbContext<ContasContext>(db => {
     db.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("LocalString"));
