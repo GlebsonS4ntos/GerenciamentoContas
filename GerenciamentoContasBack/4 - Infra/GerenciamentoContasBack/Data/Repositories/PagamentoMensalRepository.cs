@@ -18,6 +18,12 @@ namespace GerenciamentoContasBack.Infra.Data.Repositories
             _context = context;
         }
 
+        public async Task<List<PagamentoMensal>> GetAllPagamentosByContaId(int id)
+        {
+            List<PagamentoMensal> pm = await _context.PagamentosMensais.Where(p => p.ContaId == id).ToListAsync();
+            return pm;
+        }
+
         public async Task AddPagamentoMensal(PagamentoMensal pagamentoMensal)
         {
             await _context.PagamentosMensais.AddAsync(pagamentoMensal);

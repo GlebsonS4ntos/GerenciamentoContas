@@ -14,15 +14,17 @@ namespace GerenciamentoContasBack.Dominio.Entities
         public virtual Conta Conta { get; set; }
         public int Parcela { get; set; }
         public DateTime DataParcela { get; set; }
+        public double ValorParcela { get; set; }
 
         public PagamentoMensal() { }
 
-        public PagamentoMensal(int contaId, Conta conta, int parcela, DateTime dataParcela)
+        public PagamentoMensal(int contaId, Conta conta, int parcela, DateTime dataParcela, double valorParcela)
         {
             ContaId = contaId;
             Conta = conta;
             Parcela = parcela;
             DataParcela = dataParcela;
+            ValorParcela = valorParcela;
         }
 
         public void UpdatePagamentoMensal(PagamentoMensal pagamentoMensal)
@@ -31,6 +33,7 @@ namespace GerenciamentoContasBack.Dominio.Entities
             Conta = pagamentoMensal.Conta;
             Parcela = pagamentoMensal.Parcela;
             DataParcela = pagamentoMensal.DataParcela;
+            ValorParcela = pagamentoMensal.ValorParcela;
         }
     }
 }

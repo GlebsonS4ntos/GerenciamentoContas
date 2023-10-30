@@ -1,4 +1,6 @@
 ﻿using GerenciamentoConstasBack.Service.Helpers;
+using GerenciamentoConstasBack.Service.Interfaces;
+using GerenciamentoConstasBack.Service.Services;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -10,10 +12,10 @@ namespace GerenciamentoConstasBack.Service
 {
     public static class Bootstrap
     {
-        //Adicionar ao escopo da aplicação as interfaces e os servicos alem dos helpers usando o IServiceCollection
         public static void AddService(this IServiceCollection service)
         {
             AddAutoMapper(service);
+            AddServices(service);
         }
 
         private static void AddAutoMapper(IServiceCollection service)
@@ -21,6 +23,12 @@ namespace GerenciamentoConstasBack.Service
             service.AddScoped(provider => new AutoMapper.MapperConfiguration(x => {
                 x.AddProfile(new GerenciamentoContasProfile());
             }).CreateMapper());
+        }
+
+        private static void AddServices(IServiceCollection service)
+        {
+            service.AddScoped<IContaService, ContaService>();
+            service.AddScoped<ITipoService, TipoService>();
         }
     }
 }

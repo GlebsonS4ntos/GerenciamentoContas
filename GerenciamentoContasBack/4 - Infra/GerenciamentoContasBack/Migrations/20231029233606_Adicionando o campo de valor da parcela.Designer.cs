@@ -4,6 +4,7 @@ using GerenciamentoContasBack.Infra.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GerenciamentoContasBack.Infra.Migrations
 {
     [DbContext(typeof(ContasContext))]
-    partial class ContasContextModelSnapshot : ModelSnapshot
+    [Migration("20231029233606_Adicionando o campo de valor da parcela")]
+    partial class Adicionandoocampodevalordaparcela
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
